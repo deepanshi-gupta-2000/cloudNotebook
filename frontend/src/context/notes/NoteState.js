@@ -3,7 +3,7 @@ import NoteContext from './noteContext';
 
 
 function NoteState(props) {
-  const host = "http://localhost:5000/"
+  const host = "https://cloudnotebook-backend-7h2j.onrender.com"
   // const history = useNavigate();
   // const initialNote = [];
 
