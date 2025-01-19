@@ -12,14 +12,19 @@ const { body, validationResult } = require('express-validator');
 
 //  Route 1: Fetching all notes
 router.get('/fetchnotes', fetchuser, async (req, res) => {
+    try{
     const notes = await Notes.find({ user: req.userId.id })
     res.json(notes);
+    } catch(error) {
+        console.log(error.message);
+        res.status(500).send('internal server error');
+    }
 })
 
 // Route 2: Add notes
 router.post('/addnote', fetchuser, [
-    body('title', "Enter title").isLength({ min: 3 }),
-    body('description', 'Enter description').isLength({ min: 5 })
+    body('title', "Enter title").isLength({ min: 1 }),
+    body('description', 'Enter description').isLength({ min: 1 })
 ], async (req, res) => {
     const userId = await User.findById(req.userId.id);
     if (!userId) {

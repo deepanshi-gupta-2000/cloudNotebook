@@ -10,7 +10,7 @@ function NoteState(props) {
   const [notes, setNotes] = useState([]);
 
   const fetchNotes = async () => {
-    const url = `${host}notes/fetchnotes`
+    const url = `${host}/notes/fetchnotes`
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -24,7 +24,7 @@ function NoteState(props) {
   };
 
   const addNote = async (title, description, tag) => {
-    const url = `${host}notes/addnote`;
+    const url = `${host}/notes/addnote`;
     const response = await fetch (url,{
       method: "POST",
       headers: {
@@ -40,7 +40,7 @@ function NoteState(props) {
   }
 
   const deleteNote = async (id) => {
-    const url = `${host}notes/deletenote/${id}`
+    const url = `${host}/notes/deletenote/${id}`
     const response = await fetch(url,{
       method: "DELETE",
       headers: {
@@ -55,7 +55,7 @@ function NoteState(props) {
   const updateNote = async (id, title, description, tag) => {
     // console.log(note);
     // const {_id, title, description, tag} = note
-    const url = `${host}notes/updatenote/${id}`;
+    const url = `${host}/notes/updatenote/${id}`;
     const response = await fetch(url, {
       method: "PUT",
       headers: {
