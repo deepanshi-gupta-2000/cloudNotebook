@@ -9,8 +9,8 @@ function Navbar() {
   }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid" style={{color:"white"}}>
           {/* <NavLink className="navbar-brand" to="/" aria-disabled='true'>iNotebook</NavLink> */}
           iNotebook
 
